@@ -40,4 +40,13 @@ public class BowlingGameTest {
             game.roll(pins);
         }
     }
+
+    @Test
+    public void shouldScoreSpareCorrectly() {
+        game.roll(6);
+        game.roll(4);
+        game.roll(3);
+        rollMany(17, 0);
+        assertEquals(16, game.score());
+    }
 }
