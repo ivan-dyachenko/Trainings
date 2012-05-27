@@ -17,7 +17,7 @@ public class BowlingGame {
                 score += strikeBonus(frameIndex);
                 frameIndex++;
             }
-            if (isSpire(frameIndex)) {
+            else if (isSpire(frameIndex)) {
                 score += spireBonus(frameIndex);
                 frameIndex += 2;
             } else {
