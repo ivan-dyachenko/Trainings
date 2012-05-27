@@ -2,7 +2,6 @@ package kata;
 
 public class BowlingGame {
 
-    private int score;
     private int rolls[] = new int[21];
     private int currentRoll = 0;
 
@@ -11,11 +10,19 @@ public class BowlingGame {
     }
 
     public int score() {
-        score = 0;
-        for (int i = 0; i < 10; i++) {
-            score = rolls[i] + rolls[i+1];
-            i += 2;
+        int score = 0;
+        int i = 0;
+        for (int frames = 0; frames < 10; frames++) {
+            if (rolls[i] + rolls[i + 1] == 10) { // spare
+                score += 10 + rolls[i + 2];
+                i += 2;
+            } else {
+                score += rolls[i] + rolls[i + 1];
+                i += 2;
+            }
         }
         return score;
     }
 }
+
+
