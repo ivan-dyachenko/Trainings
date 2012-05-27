@@ -35,18 +35,31 @@ public class BowlingGameTest {
         assertEquals(20, game.score());
     }
 
+    @Test
+    public void shouldScoreSpareCorrectly() {
+        rollSpare();
+        game.roll(3);
+        rollMany(17, 0);
+        assertEquals(16, game.score());
+    }
+
+    @Test
+    public void shouldScoreStrikeCorrectly() {
+        game.roll(10); // strike
+        game.roll(3);
+        game.roll(4);
+        rollMany(16, 0);
+        assertEquals(24, game.score());
+    }
+
     private void rollMany(int count, int pins) {
         for (int i = 0; i < count; i++) {
             game.roll(pins);
         }
     }
 
-    @Test
-    public void shouldScoreSpareCorrectly() {
+    private void rollSpare() {
         game.roll(6);
         game.roll(4);
-        game.roll(3);
-        rollMany(17, 0);
-        assertEquals(16, game.score());
     }
 }
