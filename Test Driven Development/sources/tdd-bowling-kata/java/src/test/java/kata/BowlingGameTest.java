@@ -45,11 +45,15 @@ public class BowlingGameTest {
 
     @Test
     public void shouldScoreStrikeCorrectly() {
-        game.roll(10); // strike
-        game.roll(3);
+        rollStrike();
         game.roll(4);
         rollMany(16, 0);
         assertEquals(24, game.score());
+    }
+
+    private void rollStrike() {
+        game.roll(10);
+        game.roll(3);
     }
 
     private void rollMany(int count, int pins) {
