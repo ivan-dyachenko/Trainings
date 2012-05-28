@@ -1,0 +1,68 @@
+<project name="Ant-JUnit Example" default="report" basedir=".">
+
+    <property file="build.properties"/>
+
+    <target name="init">
+        <path id="classpath">
+            <fileset dir="${junit.home}" includes="${junit.version}"/>
+        </path>
+
+        <path id="classpath.test">
+            <path refid="classpath"/>
+            <pathelement location="${dir.compile}"/>
+        </path>
+
+        <mkdir dir="${dir.root}"/>
+        <mkdir dir="${dir.compile}"/>
+        <mkdir dir="${dir.report}"/>
+        <mkdir dir="${dir.junit.report}"/>
+        <mkdir dir="${dir.junit.reporter}"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <javac destdir="${dir.compile}">
+            <src path="${src.main}"/>
+            <src path="${src.test}"/>
+            <classpath refid="classpath"/>
+        </javac>
+    </target>
+
+    <target name="test" depends="compile">
+        <run-junit formatter="xml"/>
+    </target>
+
+    <target name="test-plain" depends="compile">
+        <run-junit formatter="plain"/>
+    </target>
+
+    <target name="clean">
+        <delete dir="${dir.root}"/>
+    </target>
+
+    <target name="report" depends="clean, test">
+        <junitreport todir="${dir.junit.reporter}">
+            <fileset dir="${dir.junit.report}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${dir.report}"/>
+        </junitreport>
+    </target>
+
+    <!-- Macros -->
+
+    <macrodef name="run-junit">
+        <attribute name="formatter" default="xml"/>
+        <sequential>
+            <junit printsummary="yes" fork="no" haltonfailure="yes" showoutput="true">
+                <classpath refid="classpath.test"/>
+                <formatter type="@{formatter}"/>
+                <batchtest todir="${dir.junit.report}">
+                    <fileset dir="${src.test}">
+                        <include name="**/*Test.java" />
+                    </fileset>
+                </batchtest>
+            </junit>
+        </sequential>
+    </macrodef>
+
+</project>
