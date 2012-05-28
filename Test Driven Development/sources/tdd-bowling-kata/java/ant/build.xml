@@ -9,18 +9,18 @@
 
         <path id="classpath.test">
             <path refid="classpath"/>
-            <pathelement location="${dir.compile}"/>
+            <pathelement location="${classes.dir}"/>
         </path>
 
-        <mkdir dir="${dir.root}"/>
-        <mkdir dir="${dir.compile}"/>
-        <mkdir dir="${dir.report}"/>
-        <mkdir dir="${dir.junit.report}"/>
-        <mkdir dir="${dir.junit.reporter}"/>
+        <mkdir dir="${dir}"/>
+        <mkdir dir="${classes.dir}"/>
+        <mkdir dir="${report.dir}"/>
+        <mkdir dir="${junit.report.dir}"/>
+        <mkdir dir="${junit.reporter.dir}"/>
     </target>
 
     <target name="compile" depends="init">
-        <javac destdir="${dir.compile}">
+        <javac destdir="${classes.dir}">
             <src path="${src.main}"/>
             <src path="${src.test}"/>
             <classpath refid="classpath"/>
@@ -36,15 +36,15 @@
     </target>
 
     <target name="clean">
-        <delete dir="${dir.root}"/>
+        <delete dir="${dir}"/>
     </target>
 
     <target name="report" depends="clean, test">
-        <junitreport todir="${dir.junit.reporter}">
-            <fileset dir="${dir.junit.report}">
+        <junitreport todir="${junit.reporter.dir}">
+            <fileset dir="${junit.report.dir}">
                 <include name="TEST-*.xml"/>
             </fileset>
-            <report format="frames" todir="${dir.report}"/>
+            <report format="frames" todir="${report.dir}"/>
         </junitreport>
     </target>
 
@@ -53,10 +53,10 @@
     <macrodef name="run-junit">
         <attribute name="formatter" default="xml"/>
         <sequential>
-            <junit printsummary="yes" fork="no" haltonfailure="yes" showoutput="true">
+            <junit printsummary="yes" fork="yes" haltonfailure="yes" showoutput="true">
                 <classpath refid="classpath.test"/>
                 <formatter type="@{formatter}"/>
-                <batchtest todir="${dir.junit.report}">
+                <batchtest todir="${junit.report.dir}">
                     <fileset dir="${src.test}">
                         <include name="**/*Test.java" />
                     </fileset>
