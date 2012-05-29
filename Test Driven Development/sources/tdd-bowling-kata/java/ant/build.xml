@@ -1,68 +1,152 @@
-<project name="Ant-JUnit Example" default="report" basedir=".">
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Ant-JUnit-Cobertura Example" default="coverage" basedir=".">
 
     <property file="build.properties"/>
 
+    <path id="cobertura.classpath">
+        <fileset dir="${cobertura.dir}">
+            <include name="cobertura.jar"/>
+            <include name="lib/**/*.jar"/>
+        </fileset>
+    </path>
+
+    <taskdef classpathref="cobertura.classpath" resource="tasks.properties"/>
+
     <target name="init">
-        <path id="classpath">
-            <fileset dir="${junit.home}" includes="${junit.version}"/>
-        </path>
-
-        <path id="classpath.test">
-            <path refid="classpath"/>
-            <pathelement location="${classes.dir}"/>
-        </path>
-
-        <mkdir dir="${dir}"/>
         <mkdir dir="${classes.dir}"/>
-        <mkdir dir="${report.dir}"/>
-        <mkdir dir="${junit.report.dir}"/>
-        <mkdir dir="${junit.reporter.dir}"/>
+        <mkdir dir="${instrumented.dir}"/>
+        <mkdir dir="${reports.xml.dir}"/>
+        <mkdir dir="${reports.html.dir}"/>
+        <mkdir dir="${coverage.xml.dir}"/>
+        <mkdir dir="${coverage.summaryxml.dir}"/>
+        <mkdir dir="${coverage.html.dir}"/>
     </target>
 
     <target name="compile" depends="init">
-        <javac destdir="${classes.dir}">
+        <javac destdir="${classes.dir}" debug="true" debuglevel="vars,lines,source">
+            <classpath refid="cobertura.classpath"/>
             <src path="${src.main}"/>
             <src path="${src.test}"/>
-            <classpath refid="classpath"/>
+            <classpath location="libs/${junit.version}"/>
         </javac>
     </target>
 
-    <target name="test" depends="compile">
-        <run-junit formatter="xml"/>
+    <target name="instrument" depends="init,compile">
+        <!--
+          Remove the coverage data file and any old instrumentation.
+        -->
+        <delete file="cobertura.ser"/>
+        <delete dir="${instrumented.dir}"/>
+
+        <!--
+          Instrument the application classes, writing the
+          instrumented classes into ${build.instrumented.dir}.
+        -->
+        <cobertura-instrument todir="${instrumented.dir}">
+            <!--
+               The following line causes instrument to ignore any
+               source line containing a reference to log4j, for the
+               purposes of coverage reporting.
+            -->
+            <ignore regex="org.apache.log4j.*"/>
+
+            <fileset dir="${classes.dir}">
+                <!--
+                    Instrument all the application classes, but
+                    don't instrument the test classes.
+                -->
+                <include name="**/*.class"/>
+                <exclude name="**/*Test.class"/>
+            </fileset>
+        </cobertura-instrument>
     </target>
 
-    <target name="test-plain" depends="compile">
-        <run-junit formatter="plain"/>
-    </target>
+    <target name="test" depends="init,compile">
+        <junit fork="yes" dir="./" failureProperty="test.failed" printSummary="yes">
+            <!--
+               Note the classpath order: instrumented classes are before the
+               original (uninstrumented) classes.  This is important.
+            -->
+            <classpath location="${instrumented.dir}"/>
+            <classpath location="${classes.dir}"/>
+            <classpath location="libs/${junit.version}"/>
 
-    <target name="clean">
-        <delete dir="${dir}"/>
-    </target>
+            <!--
+               The instrumented classes reference classes used by the
+               Cobertura runtime, so Cobertura and its dependencies
+               must be on your classpath.
+            -->
+            <classpath refid="cobertura.classpath"/>
 
-    <target name="report" depends="clean, test">
-        <junitreport todir="${junit.reporter.dir}">
-            <fileset dir="${junit.report.dir}">
+            <formatter type="xml"/>
+            <batchtest todir="${reports.xml.dir}">
+                <fileset dir="${src.test}">
+                    <include name="**/*Test.java"/>
+                </fileset>
+            </batchtest>
+        </junit>
+
+        <junitreport todir="${reports.xml.dir}">
+            <fileset dir="${reports.xml.dir}">
                 <include name="TEST-*.xml"/>
             </fileset>
-            <report format="frames" todir="${report.dir}"/>
+            <report format="frames" todir="${reports.html.dir}"/>
         </junitreport>
     </target>
 
-    <!-- Macros -->
+    <target name="coverage-check">
+        <cobertura-check branchrate="34" totallinerate="100"/>
+    </target>
 
-    <macrodef name="run-junit">
-        <attribute name="formatter" default="xml"/>
-        <sequential>
-            <junit printsummary="yes" fork="yes" haltonfailure="yes" showoutput="true">
-                <classpath refid="classpath.test"/>
-                <formatter type="@{formatter}"/>
-                <batchtest todir="${junit.report.dir}">
-                    <fileset dir="${src.test}">
-                        <include name="**/*Test.java" />
-                    </fileset>
-                </batchtest>
-            </junit>
-        </sequential>
-    </macrodef>
+    <target name="coverage-report">
+        <!--
+          Generate an XML file containing the coverage data using
+          the "srcdir" attribute.
+         -->
+        <cobertura-report destdir="${coverage.xml.dir}" format="xml">
+            <fileset dir="${src.main}">
+                <include name="**/*.java"/>
+            </fileset>
+            <fileset dir="${src.test}">
+                <include name="**/*.java"/>
+            </fileset>
+        </cobertura-report>
+    </target>
+
+    <target name="summary-coverage-report">
+        <!--
+          Generate an summary XML file containing the coverage data using
+          the "srcdir" attribute.
+        -->
+        <cobertura-report destdir="${coverage.summaryxml.dir}" format="summaryXml">
+            <fileset dir="${src.main}">
+                <include name="**/*.java"/>
+            </fileset>
+            <fileset dir="${src.test}">
+                <include name="**/*.java"/>
+            </fileset>
+        </cobertura-report>
+    </target>
+
+    <target name="alternate-coverage-report">
+        <!--
+          Generate a series of HTML files containing the coverage
+          data in a user-readable form using nested source filesets.
+        -->
+        <cobertura-report destdir="${coverage.html.dir}">
+            <fileset dir="${src.main}">
+                <include name="**/*.java"/>
+            </fileset>
+        </cobertura-report>
+    </target>
+
+    <target name="clean" description="Remove all files created by the build/test process.">
+        <delete dir="${dir}"/>
+        <delete file="cobertura.ser"/>
+    </target>
+
+    <target name="coverage"
+            depends="compile,instrument,test,coverage-report,summary-coverage-report,alternate-coverage-report"
+            description="Compile, instrument ourself, run the tests and generate JUnit and coverage reports."/>
 
 </project>
