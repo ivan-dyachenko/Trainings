@@ -66,6 +66,18 @@
         </profile>
     </profiles>
 
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>sonar-maven-plugin</artifactId>
+                    <version>2.0</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
     <repositories>
         <repository>
             <id>maven-2</id>
