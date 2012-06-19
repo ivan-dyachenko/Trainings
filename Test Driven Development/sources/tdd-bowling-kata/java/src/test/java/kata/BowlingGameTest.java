@@ -47,6 +47,7 @@ public class BowlingGameTest {
     public void shouldScoreStrikeCorrectly() {
         rollStrike();
         game.roll(4);
+        game.roll(3);
         rollMany(16, 0);
         assertEquals(24, game.score());
     }
@@ -59,7 +60,6 @@ public class BowlingGameTest {
 
     private void rollStrike() {
         game.roll(10);
-        game.roll(3);
     }
 
     private void rollMany(int count, int pins) {
