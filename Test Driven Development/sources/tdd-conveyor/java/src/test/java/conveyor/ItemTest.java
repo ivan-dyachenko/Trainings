@@ -1,8 +1,6 @@
 package conveyor;
 
-import org.junit.Before;
 import org.junit.Test;
-
 import static org.fest.assertions.Assertions.assertThat;
 
 public class ItemTest {
@@ -14,5 +12,15 @@ public class ItemTest {
         int lifeTime = item.lifeTime();
         // then
         assertThat(lifeTime).isZero();
+    }
+
+    @Test
+    public void shouldIncrementLifeTimeDuringTick() {
+        // given
+        final Item item = new Item();
+        // when
+        item.tick();
+        // then
+        assertThat(item.lifeTime()).isEqualTo(1);
     }
 }
