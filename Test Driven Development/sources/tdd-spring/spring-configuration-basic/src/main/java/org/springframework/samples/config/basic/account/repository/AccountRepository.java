@@ -12,6 +12,8 @@ public interface AccountRepository {
 
 	void add(Account account);
 
+    void clear();
+
 	Set<Account> findAll();
 
 }

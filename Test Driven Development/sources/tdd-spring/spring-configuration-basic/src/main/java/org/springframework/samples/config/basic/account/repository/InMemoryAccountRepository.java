@@ -28,7 +28,11 @@ public class InMemoryAccountRepository implements AccountRepository {
 		accountsById.put(account.getId(), Account.copy(account));
 	}
 
-	public Set<Account> findAll() {
+    public void clear() {
+        accountsById.clear();
+    }
+
+    public Set<Account> findAll() {
 		HashSet<Account> allAccounts = new HashSet<Account>();
 		for (Account account : accountsById.values())
 			allAccounts.add(Account.copy(account));
