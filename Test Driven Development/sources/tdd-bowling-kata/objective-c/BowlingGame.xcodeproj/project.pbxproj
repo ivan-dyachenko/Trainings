@@ -1,0 +1,542 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		586030C821F265E8293E48C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603F9CF6DE83B2B465688E /* AppDelegate.m */; };
+		586032AC478706C1F931FA5B /* BowlingGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 586031F057B4F8678C34098C /* BowlingGameTests.m */; };
+		58603434C1E7DF0AA4E2266F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5860344F7985AFF9541D2DF0 /* CoreGraphics.framework */; };
+		586034BB003F250C8A9F4DB5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 586032F5E2918470F756F409 /* InfoPlist.strings */; };
+		586035F16439FE95D50B099B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58603361F895607AFCF85ECB /* UIKit.framework */; };
+		58603661006C5EDB77FD054C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 586036F2ACFE1318C6B6987F /* Default@2x.png */; };
+		586037E3227993642B1715AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58603682A69C39BBEBB66C5B /* Foundation.framework */; };
+		586039A6D1EA368B5D94C3FF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58603C1E97B0A182F36E0E2E /* SenTestingKit.framework */; };
+		58603AE41D9254611204BE89 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5860394A7F635B66D56AC614 /* InfoPlist.strings */; };
+		58603B6D53FD8F41DA8E1E8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860306BB53489B3D51CA2C7 /* main.m */; };
+		58603CA652CBAC48BC7DBF3D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58603361F895607AFCF85ECB /* UIKit.framework */; };
+		58603DE420B35389B64D5150 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58603FBEE85DB13B9B31286D /* Default-568h@2x.png */; };
+		58603E3AF6C9062EDE6B9F23 /* BowlingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 586033C9E633F4158169EA47 /* BowlingGame.m */; };
+		58603E8572A1178701351257 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 586037E6FB2FCA7B5C90820A /* Default.png */; };
+		58603F341579A7DD0705632C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58603682A69C39BBEBB66C5B /* Foundation.framework */; };
+		84F16194165ED03900513092 /* BowlingGameSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F16193165ED03900513092 /* BowlingGameSpecs.m */; };
+		84F16196165ED1D500513092 /* libKiwi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F16195165ED1D500513092 /* libKiwi.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		586032BE22EB7CA54BBED3CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 586030CE4D5DB5164FA21E08 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5860349FEA43E194F7888405;
+			remoteInfo = BowlingGame;
+		};
+		58603308BE6C347E9B89B849 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58603AFC9325DF12FFCC44AE /* Kiwi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 58603BABD40050895B352057;
+			remoteInfo = "Kiwi-OSX";
+		};
+		586036FB45D5E301B499ABCB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58603AFC9325DF12FFCC44AE /* Kiwi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 586030D1BE1186E53C549792;
+			remoteInfo = KiwiExamples;
+		};
+		58603A222A1E6131E21ED621 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58603AFC9325DF12FFCC44AE /* Kiwi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 58603277F403214CE51CD8E0;
+			remoteInfo = KiwiTests;
+		};
+		58603C0DDC74566BB9DCC6BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58603AFC9325DF12FFCC44AE /* Kiwi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 58603E1188BF72BF8D7E38F5;
+			remoteInfo = Kiwi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		58603044B39D6470AF511BC0 /* BowlingGameTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "BowlingGameTests-Info.plist"; sourceTree = "<group>"; };
+		5860305AEF3778DCB6CFAE11 /* BowlingGameTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BowlingGameTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5860306BB53489B3D51CA2C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		58603142CA1E3B647D60D57D /* BowlingGameTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BowlingGameTests.h; sourceTree = "<group>"; };
+		586031F057B4F8678C34098C /* BowlingGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BowlingGameTests.m; sourceTree = "<group>"; };
+		58603361F895607AFCF85ECB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		586033C9E633F4158169EA47 /* BowlingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BowlingGame.m; sourceTree = "<group>"; };
+		5860341CCE396F0B0ACD9952 /* BowlingGame-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "BowlingGame-Info.plist"; sourceTree = "<group>"; };
+		5860344F7985AFF9541D2DF0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5860347169FB5DF7FDCB1F0B /* BowlingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BowlingGame.h; sourceTree = "<group>"; };
+		586034AB57F36BCD7B861CD6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5860352A33CCA81D974413EC /* BowlingGame-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BowlingGame-Prefix.pch"; sourceTree = "<group>"; };
+		58603543F84D5709028140EC /* BowlingGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BowlingGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		58603682A69C39BBEBB66C5B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		586036F2ACFE1318C6B6987F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		586037E6FB2FCA7B5C90820A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		58603AFC9325DF12FFCC44AE /* Kiwi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kiwi.xcodeproj; path = Frameworks/Kiwi/Kiwi.xcodeproj; sourceTree = "<group>"; };
+		58603BBB7E6C402DC06AE847 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		58603C1E97B0A182F36E0E2E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		58603F02D7110AA3B8E7FD5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		58603F9CF6DE83B2B465688E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		58603FBEE85DB13B9B31286D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		84F16193165ED03900513092 /* BowlingGameSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BowlingGameSpecs.m; sourceTree = "<group>"; };
+		84F16195165ED1D500513092 /* libKiwi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKiwi.a; path = "Frameworks/Kiwi/build/Release-iphoneos/libKiwi.a"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		586038ACC4C8AB29ED67CABC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58603CA652CBAC48BC7DBF3D /* UIKit.framework in Frameworks */,
+				58603F341579A7DD0705632C /* Foundation.framework in Frameworks */,
+				58603434C1E7DF0AA4E2266F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58603F2CA3198FFCC985FC9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84F16196165ED1D500513092 /* libKiwi.a in Frameworks */,
+				586039A6D1EA368B5D94C3FF /* SenTestingKit.framework in Frameworks */,
+				586035F16439FE95D50B099B /* UIKit.framework in Frameworks */,
+				586037E3227993642B1715AB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		58603078C900DA3FBE85ADC4 = {
+			isa = PBXGroup;
+			children = (
+				586038EC44F7955E32471C4A /* Products */,
+				58603EE24F924D27FA3C7CC3 /* Frameworks */,
+				5860386FB75C25F098E4A6BC /* BowlingGame */,
+				586038F0352F6E4D157FA687 /* BowlingGameTests */,
+				58603AFC9325DF12FFCC44AE /* Kiwi.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		58603199F03DB5061365DA96 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				58603425D0FB885D0B1758B3 /* libKiwi.a */,
+				5860350B9BB539E3CD92ED6D /* libKiwi-OSX.a */,
+				58603F39B355F7CE517EA83C /* KiwiTests.octest */,
+				5860321E58FE8F7944FBD517 /* KiwiExamples.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		586034079B29E3D30155FC3A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5860341CCE396F0B0ACD9952 /* BowlingGame-Info.plist */,
+				5860394A7F635B66D56AC614 /* InfoPlist.strings */,
+				5860306BB53489B3D51CA2C7 /* main.m */,
+				5860352A33CCA81D974413EC /* BowlingGame-Prefix.pch */,
+				586037E6FB2FCA7B5C90820A /* Default.png */,
+				586036F2ACFE1318C6B6987F /* Default@2x.png */,
+				58603FBEE85DB13B9B31286D /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5860386FB75C25F098E4A6BC /* BowlingGame */ = {
+			isa = PBXGroup;
+			children = (
+				586034079B29E3D30155FC3A /* Supporting Files */,
+				58603BBB7E6C402DC06AE847 /* AppDelegate.h */,
+				58603F9CF6DE83B2B465688E /* AppDelegate.m */,
+			);
+			path = BowlingGame;
+			sourceTree = "<group>";
+		};
+		586038EC44F7955E32471C4A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				58603543F84D5709028140EC /* BowlingGame.app */,
+				5860305AEF3778DCB6CFAE11 /* BowlingGameTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		586038F0352F6E4D157FA687 /* BowlingGameTests */ = {
+			isa = PBXGroup;
+			children = (
+				58603F72B0A5F28636BA7084 /* Supporting Files */,
+				58603142CA1E3B647D60D57D /* BowlingGameTests.h */,
+				586031F057B4F8678C34098C /* BowlingGameTests.m */,
+				586033C9E633F4158169EA47 /* BowlingGame.m */,
+				5860347169FB5DF7FDCB1F0B /* BowlingGame.h */,
+				84F16193165ED03900513092 /* BowlingGameSpecs.m */,
+			);
+			path = BowlingGameTests;
+			sourceTree = "<group>";
+		};
+		58603EE24F924D27FA3C7CC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84F16195165ED1D500513092 /* libKiwi.a */,
+				58603361F895607AFCF85ECB /* UIKit.framework */,
+				58603682A69C39BBEBB66C5B /* Foundation.framework */,
+				5860344F7985AFF9541D2DF0 /* CoreGraphics.framework */,
+				58603C1E97B0A182F36E0E2E /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		58603F72B0A5F28636BA7084 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				58603044B39D6470AF511BC0 /* BowlingGameTests-Info.plist */,
+				586032F5E2918470F756F409 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5860349FEA43E194F7888405 /* BowlingGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 586035CE288AC5F6A5BBFBE2 /* Build configuration list for PBXNativeTarget "BowlingGame" */;
+			buildPhases = (
+				586031548D9F1EAB3D544238 /* Sources */,
+				586038ACC4C8AB29ED67CABC /* Frameworks */,
+				58603DA31267E0F539314928 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BowlingGame;
+			productName = BowlingGame;
+			productReference = 58603543F84D5709028140EC /* BowlingGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5860385A652F9AC07935812D /* BowlingGameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 586039E1F41808AD33DCBD9B /* Build configuration list for PBXNativeTarget "BowlingGameTests" */;
+			buildPhases = (
+				58603D67D4EC168CADE549E9 /* Sources */,
+				58603F2CA3198FFCC985FC9C /* Frameworks */,
+				586031E747E6BB5D65C525D8 /* Resources */,
+				58603398954DF69F48D78F73 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				58603911FAE6FB99191CF3A4 /* PBXTargetDependency */,
+			);
+			name = BowlingGameTests;
+			productName = BowlingGameTests;
+			productReference = 5860305AEF3778DCB6CFAE11 /* BowlingGameTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		586030CE4D5DB5164FA21E08 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 586032D85C07B25B949FB792 /* Build configuration list for PBXProject "BowlingGame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 58603078C900DA3FBE85ADC4;
+			productRefGroup = 586038EC44F7955E32471C4A /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 58603199F03DB5061365DA96 /* Products */;
+					ProjectRef = 58603AFC9325DF12FFCC44AE /* Kiwi.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				5860349FEA43E194F7888405 /* BowlingGame */,
+				5860385A652F9AC07935812D /* BowlingGameTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5860321E58FE8F7944FBD517 /* KiwiExamples.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = KiwiExamples.octest;
+			remoteRef = 586036FB45D5E301B499ABCB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		58603425D0FB885D0B1758B3 /* libKiwi.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libKiwi.a;
+			remoteRef = 58603C0DDC74566BB9DCC6BA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5860350B9BB539E3CD92ED6D /* libKiwi-OSX.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libKiwi-OSX.a";
+			remoteRef = 58603308BE6C347E9B89B849 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		58603F39B355F7CE517EA83C /* KiwiTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = KiwiTests.octest;
+			remoteRef = 58603A222A1E6131E21ED621 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		586031E747E6BB5D65C525D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				586034BB003F250C8A9F4DB5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58603DA31267E0F539314928 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58603AE41D9254611204BE89 /* InfoPlist.strings in Resources */,
+				58603E8572A1178701351257 /* Default.png in Resources */,
+				58603661006C5EDB77FD054C /* Default@2x.png in Resources */,
+				58603DE420B35389B64D5150 /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		58603398954DF69F48D78F73 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		586031548D9F1EAB3D544238 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58603B6D53FD8F41DA8E1E8A /* main.m in Sources */,
+				586030C821F265E8293E48C2 /* AppDelegate.m in Sources */,
+				58603E3AF6C9062EDE6B9F23 /* BowlingGame.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58603D67D4EC168CADE549E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				586032AC478706C1F931FA5B /* BowlingGameTests.m in Sources */,
+				84F16194165ED03900513092 /* BowlingGameSpecs.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		58603911FAE6FB99191CF3A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5860349FEA43E194F7888405 /* BowlingGame */;
+			targetProxy = 586032BE22EB7CA54BBED3CA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		586032F5E2918470F756F409 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58603F02D7110AA3B8E7FD5C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5860394A7F635B66D56AC614 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				586034AB57F36BCD7B861CD6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		58603052808B0463C13B29A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BowlingGame/BowlingGame-Prefix.pch";
+				INFOPLIST_FILE = "BowlingGame/BowlingGame-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		58603283D2340BAEC9F28B09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BowlingGame.app/BowlingGame";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BowlingGame/BowlingGame-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "BowlingGameTests/BowlingGameTests-Info.plist";
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "\"$(SOURCE_ROOT)/Frameworks/Kiwi/Kiwi\" \"${PROJECT_DIR}/Frameworks/Kiwi\"/**";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		5860356558ED1B1F70CAABEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BowlingGame/BowlingGame-Prefix.pch";
+				INFOPLIST_FILE = "BowlingGame/BowlingGame-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		5860370E63996631DEA729B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		586037ADB39CCAE896797456 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		58603E47E3AE7C27AF0363FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BowlingGame.app/BowlingGame";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BowlingGame/BowlingGame-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "BowlingGameTests/BowlingGameTests-Info.plist";
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "\"$(SOURCE_ROOT)/Frameworks/Kiwi/Kiwi\" \"${PROJECT_DIR}/Frameworks/Kiwi\"/**";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		586032D85C07B25B949FB792 /* Build configuration list for PBXProject "BowlingGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				586037ADB39CCAE896797456 /* Release */,
+				5860370E63996631DEA729B6 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		586035CE288AC5F6A5BBFBE2 /* Build configuration list for PBXNativeTarget "BowlingGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5860356558ED1B1F70CAABEC /* Release */,
+				58603052808B0463C13B29A2 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		586039E1F41808AD33DCBD9B /* Build configuration list for PBXNativeTarget "BowlingGameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58603E47E3AE7C27AF0363FA /* Release */,
+				58603283D2340BAEC9F28B09 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 586030CE4D5DB5164FA21E08 /* Project object */;
+}
