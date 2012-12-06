@@ -1,0 +1,13 @@
+{
+    "name"            : "bowling",
+    "version"         : "0.0.1",
+    "devDependencies" : {
+        "mocha"         : ">=0.14",
+        "should"        : ">=1.2.x",
+        "coffee-script" : ">=1.2.x"
+    },
+    "scripts"         : {
+        "test"        : "jasmine-node --coffee --autotest test",
+        "pre-publish" : "cake build"
+    }
+}
