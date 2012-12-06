@@ -1,0 +1,8 @@
+node-modules/
+tools/
+.DS_Store
+Thumbs.db
+out
+target
+.idea
+*.iml
