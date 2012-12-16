@@ -1,0 +1,1 @@
+ShoppingCart{products=[Product{price=500, name='iPad'}, Product{price=20, name='Mouse'}], total=520}

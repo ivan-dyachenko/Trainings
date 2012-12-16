@@ -1,14 +1,24 @@
-import org.approvaltests.Approvals;
+package playground.legacy;
+
+import org.approvaltests.reporters.UseReporter;
+import org.approvaltests.reporters.macosx.KSDiffReporter;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.approvaltests.Approvals.verify;
+import static org.approvaltests.Approvals.verifyAll;
+
+@UseReporter(KSDiffReporter.class)
 public class HugeAndScaryLegacyCodeTest {
 
     @Test
     public void should_work_some_how() throws Exception {
-        Approvals.verify(HugeAndScaryLegacyCode.TheUgliesMethodYouMightEverSeen("someinput", 10, 'c'));
+        verify(
+                HugeAndScaryLegacyCode.
+                TheUgliesMethodYouMightEverSeen("someinput", 10, 'c')
+        );
     }
 
     @Test
@@ -21,11 +31,14 @@ public class HugeAndScaryLegacyCodeTest {
         for (int number : numbers) {
             for (char c : chars) {
                 for (String string : strings) {
-                    result.add(HugeAndScaryLegacyCode.TheUgliesMethodYouMightEverSeen(string, number, c));
+                    result.add(
+                            HugeAndScaryLegacyCode.
+                            TheUgliesMethodYouMightEverSeen(string, number, c)
+                    );
                 }
             }
         }
 
-        Approvals.verifyAll("legacy", result.toArray());
+        verifyAll("legacy", result.toArray());
     }
 }

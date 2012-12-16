@@ -1,3 +1,5 @@
+package playground.legacy;
+
 public class HugeAndScaryLegacyCode {
 
     public static String TheUgliesMethodYouMightEverSeen(String s, int i, char c) {
